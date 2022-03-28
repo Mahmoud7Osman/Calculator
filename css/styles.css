@@ -1,48 +1,56 @@
-* {
-    user-select: none;
-    margin: 0;
-}
-#calculator{
-    width: 25vw;
-    height: 88vh;
-    margin: 10px;
-    color: white;
-    background-color: rgb(196, 196, 196);
-    border: black 1px solid;
-    overflow: hidden;
-}
-#screen{
-    background-color: rgb(0, 204, 0);
-    color: black;
-    border: solid 15px black;
-    font-weight: bolder;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+*{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
-
-    
-    padding: 5px;
-    height: 20%;
+    user-select: none;
 }
-#keys{   
-    width: 100%;
+.calculator{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+.calculator > button{
+    border: solid black 1px;
+    background-color: white;
+    color: black;
     height: 100%;
-    margin-left: 10px;
-    background-color: rgba(202, 202, 202, 0);
-
+}
+.calculator > button:hover{
+    color: white;
+    background-color: black;
+}
+.calculator > button:active{
+    background-color: rgb(58, 58, 58);
+    color: rgb(255, 255, 255);
+}
+#output{
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
     padding: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
-.key{
-    display: inline-block;
-    height: fit-content;
-    padding: 39px;
-    margin-right: 0;
-    font-size: 15px;
-    font-family: 'Segoe UI';
-    border: solid 1px black;
+#ac{
+    background-color: rgb(255, 111, 111);
+    color: white;
 }
-.key:hover{
-    background-color: grey;
+#ac:hover{
+    background-color: red;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
 }
-.key:active{
-    background-color: rgb(87, 87, 87);
+#eq{
+    background-color: rgb(157, 255, 255);
+    color: black;
+}
+#eq:hover{
+    cursor: pointer;
+    background-color: rgb(0, 191, 255);
 }
